@@ -2,7 +2,7 @@ import User from '../models/User';
 import session from '../session';
 import bcrypt from 'bcrypt';
 
-export async function login(req, res) {
+async function postLogin(req, res) {
 	let userData = req.body;
 
 	if (!userData.username || !userData.password) {
@@ -21,12 +21,13 @@ export async function login(req, res) {
 			user.token = token;
 
 			await user.save();
-			res.send({token: token});
+			res.send({token});
 
 			session.sessionToken = token;
 		});
 	} else {
 		return res.status(401).send({message: 'Wrong username or password.'});
 	}
-
 }
+
+module.exports = {postLogin};
