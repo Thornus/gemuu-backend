@@ -1,9 +1,9 @@
-import {login} from '../controllers/loginController';
+import {postLogin} from '../controllers/loginController';
 
 const loginRoute = {
 
 	init(app) {
-		app.post('/login', login);
+		app.post('/login', postLogin);
 	}
 
 };
