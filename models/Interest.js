@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 function getModel() {
 	let interestSchema = mongoose.Schema({
 		name: { type: String, required: true },
-		password: { type: String, required: true },
+		followers: { type: Number, required: true },
 		imgPath:    { type: String, required: true },
 
 		created: { type: Date, default: Date.now }

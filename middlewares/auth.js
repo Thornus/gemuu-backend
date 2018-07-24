@@ -5,14 +5,15 @@ import _ from 'lodash';
 const auth = (req, res, next) => {
   const token = req.body.token || req.query.token || req.headers['x-access-token'] || req.headers['authorization'];
 
-  console.log('Passing through auth with token:', token);
-  const noAuthPaths = ['/login', '/register', '/interests']
+  const noAuthRoutes = ['/login', '/register', '/interests', '/registration']
 
-  if(_.includes(noAuthPaths, req.path)) {
+  if(_.includes(noAuthRoutes, req.path)) {
+	console.log(`Passing through '${req.path}', which doesn't need auth`);
     return next();
   }
 
   if (token) {
+	console.log(`Passing through '${req.path}' with token:`, token);
 
     jwt.verify(token, ')>=B`9hK`k=UxJm@', function(err, decoded) {
       console.log('session token:', session.sessionToken);

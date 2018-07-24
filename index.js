@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import db from './db';
 import loginRoute from './routes/loginRoute';
 import interestsRoute from './routes/interestsRoute';
+import registrationRoute from './routes/registrationRoute';
 import auth from './middlewares/auth';
 import cors from 'cors';
 
@@ -16,5 +17,6 @@ app.use(auth);
 
 loginRoute.init(app);
 interestsRoute.init(app);
+registrationRoute.init(app);
 
 app.listen(3001, () => console.log('Server listening on port 3001!'));

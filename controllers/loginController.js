@@ -1,6 +1,7 @@
 import User from '../models/User';
 import session from '../session';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 
 async function postLogin(req, res) {
 	let userData = req.body;
