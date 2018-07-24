@@ -10,7 +10,7 @@ Models are schemas for the information to insert into the database. Every entity
 
 #### routes
 
-Routes contain all the POST/GET/PUT (etc) functions.
+Routes contain all the POST/GET/PUT (etc) functions. _**All** routes must be initialized in `index.js`_
 
 #### controllers
 
