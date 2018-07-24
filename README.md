@@ -15,3 +15,13 @@ Routes contain all the POST/GET/PUT (etc) functions.
 #### controllers
 
 Controllers are where the POST/GET/PUT (etc) functions are defined and exported to be used in routes.
+
+### Middlewares
+
+Middlewares are functions executed before any route is called.
+
+#### auth
+
+`auth` checks that the request is authorized (i.e. there is a valid token).
+
+Routes that don't need authorization are stored in the `noAuthRoutes` array.
