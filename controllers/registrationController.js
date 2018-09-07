@@ -5,7 +5,14 @@ import bcrypt from 'bcrypt';
 async function postRegistration(req, res) {
 	let userData = req.body;
 
+	let existingUser = await User.findOne({username: userData.username});
+	if (existingUser && userData.username === existingUser.username) {
+		res.status(400).send({error: 'usernameAlreadyTaken'});
+		throw 'usernameAlreadyTaken';
+	}
+
 	if (userData.password && userData.password !== userData.passwordConfirm) {
+		res.status(400).send({error: 'passwordsMustMatch'});
 		throw 'passwordsMustMatch';
 	}
 
