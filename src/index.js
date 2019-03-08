@@ -7,7 +7,10 @@ import registrationRoute from './routes/registrationRoute';
 import auth from './middlewares/auth';
 import cors from 'cors';
 
-db.init('mongodb://localhost:27017/gemuu-local');
+const localDB = 'mongodb://localhost:27017/gemuu-local';
+const herokuDB = 'mongodb://ds015730.mlab.com:15730/heroku_cc2214zg';
+
+db.init(herokuDB); 
 
 const app = express();
 app.use(bodyParser.json());
