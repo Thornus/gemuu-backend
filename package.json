@@ -27,6 +27,7 @@
     "eslint": "^4.19.1",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.2.5"
+    "mongoose": "^5.2.5",
+    "nodemon": "^1.18.3"
   }
 }
