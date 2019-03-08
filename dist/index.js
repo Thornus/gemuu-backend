@@ -34,7 +34,10 @@ var _cors2 = _interopRequireDefault(_cors);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_db2.default.init('mongodb://localhost:27017/gemuu-local');
+var localDB = 'mongodb://localhost:27017/gemuu-local';
+var herokuDB = 'mongodb://user0:user0pw@ds015730.mlab.com:15730/heroku_cc2214zg';
+
+_db2.default.init(herokuDB);
 
 var app = (0, _express2.default)();
 app.use(_bodyParser2.default.json());
