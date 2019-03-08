@@ -1,4 +1,4 @@
-export default const Follow = () => {
+const Follow = () => {
 	let followSchema = mongoose.Schema({
 		follower: { type: Schema.Types.ObjectId, required: true },
 		followee: { type: Schema.Types.ObjectId, required: true },
@@ -8,3 +8,5 @@ export default const Follow = () => {
 
 	return mongoose.model('Follow', followSchema);
 }
+
+export default Follow;
