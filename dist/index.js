@@ -49,6 +49,7 @@ _loginRoute2.default.init(app);
 _interestsRoute2.default.init(app);
 _registrationRoute2.default.init(app);
 
-app.listen(3001, function () {
-  return console.log('Server listening on port 3001!');
+var port = process.env.PORT || 3001;
+app.listen(port, function () {
+  return console.log('Server listening on port ' + port + '!');
 });
