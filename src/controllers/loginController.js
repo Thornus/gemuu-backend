@@ -6,14 +6,14 @@ import jwt from 'jsonwebtoken';
 async function postLogin(req, res) {
 	let userData = req.body;
 
-	if (!userData.username || !userData.password) {
+	if(!userData.username || !userData.password) {
 		return res.status(400).send('Invalid request data.');
 	}
 
 	let user = await User.findOne({username: userData.username});
 
 	if(user) {
-		bcrypt.compare(userData.password, user.password, async function (err, result) {
+		bcrypt.compare(userData.password, user.password, async (err, result) => {
 			if (!result) {
 				return res.status(401).send({message: 'Wrong username or password.'});
 			}
